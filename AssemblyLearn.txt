@@ -1,3 +1,10 @@
 i int 0
+p int 4
 
-main jumpH
+main 
+     load r1,i
+     load r2,p
+     add r1,r2
+     print r1
+     
+return
