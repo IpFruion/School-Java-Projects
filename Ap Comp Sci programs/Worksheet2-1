@@ -10,17 +10,33 @@ dog int 3
 cat int 0
 fight int 0
 goat int 0
+
+//problem 3
+mule int 0
+donkey int 1
+burrow int 2
+remain int 0
+numerator int 0
+denominator int 0
+cel int 0
+fahr int 0
+seconds int 0
+minutes int 0
 //end definitions
 main
+	//start of problem 2 load
 	load r1, three
 	load r2, nine
 	load r3, year
 	load r4, dog
+	//end of load
 
+	//start of problems 2
 	//cat = dog +3
 	add r1, r4
 	store r1, cat
 	PrintMsg	""
+	PrintMsg	"Equation: 3+3 = 6"
 	PrintMsg	"The Contents of cat: "
 	PrintReg	r1
 	//end of equation
@@ -29,6 +45,7 @@ main
 	add r1, r4
 	store r1, fight
 	PrintMsg	""
+	PrintMsg	"Equation: 6+3 = 9"
 	PrintMsg	"The Contents of fight: "
 	PrintReg	r1
 	//end of equation
@@ -37,6 +54,22 @@ main
 	mult r2, r3
 	store r2, goat
 	PrintMsg	""
+	PrintMsg	"Equation: (365 - 9) * 9 = 3024"
 	PrintMsg	"The Contents of goat: "
 	PrintReg	r2
+
+	//end of problems 2
+	//start of problem 3 load
+	load r1, donkey
+	load r2, burrow
+	//end of load
+
+	//start of problems 3
+	add r1, r2
+	store r1, mule
+	PrintMsg 	""
+	PrintMsg	"Equation: 2+1 = 3"
+	PrintMsg 	"The Contents of Mule"
+	PrintReg	r1
+
 	return
