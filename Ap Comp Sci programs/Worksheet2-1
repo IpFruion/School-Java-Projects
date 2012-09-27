@@ -9,6 +9,7 @@ year int 365
 dog int 3
 cat int 0
 fight int 0
+goat int 0
 //end definitions
 main
 	load r1, three
@@ -27,8 +28,15 @@ main
 	//fight = dog + cat
 	add r1, r4
 	store r1, fight
+	PrintMsg	""
+	PrintMsg	"The Contents of fight: "
+	PrintReg	r1
 	//end of equation
 	//goat = (year - fight) * 9
-	
-	
+	sub r3, r1
+	mult r2, r3
+	store r2, goat
+	PrintMsg	""
+	PrintMsg	"The Contents of goat: "
+	PrintReg	r2
 	return
