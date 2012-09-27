@@ -1,0 +1,18 @@
+//Worksheet problem 1 hw
+nine int 9
+three int 3
+year int 365
+i int 0
+main
+	load r1, three
+	load r4, nine
+	loadk r2, 1
+	load r3, year
+	add r1, r2
+	sub r4, r1 
+	div r3, r4
+	store r3, i
+	PrintMsg	"This is 365/5"
+	PrintReg	r3
+	return
+
