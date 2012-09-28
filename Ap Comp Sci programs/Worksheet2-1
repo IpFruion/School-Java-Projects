@@ -19,11 +19,15 @@ remain int 0
 numerator int 4
 denominator int 2
 cel int 0
-fahr int 0
-seconds int 0
-minutes int 0
+fahr int 71
+seconds int 30
+minutes int 8
 //end definitions
 main
+	PrintMsg	"============================================="
+	PrintMsg	"               Start of Program              "
+	PrintMsg	"============================================="
+
 	//start of problem 2 load
 	load r1, three
 	load r2, nine
@@ -64,9 +68,17 @@ main
 	load r2, burrow
 	load r3, numerator
 	load r4, denominator
+	load r5, fahr
+	loadk r6, 32
+	loadk r7, 5
+	loadk r8, 9
+	load r9, seconds
+	load r10, minutes
+	loadk r11, 60
 	//end of load
 
 	//start of problems 3
+	// mule = donkey + burrow
 	add r1, r2
 	store r1, mule
 	PrintMsg 	""
@@ -79,7 +91,32 @@ main
 	store r3, remain
 	PrintMsg	""
 	PrintMsg	"Equation: 4/2 = 2"
-	PrintMsg	"The Contents of remain"
+	PrintMsg	"The Contents of remain: "
+	PrintReg	r3
+	PrintMsg	"And the Remainder: "
+	PrintReg	r4
 	
+	//cel = ((fahr - 32) * 5) / 9
+	sub r5, r6
+	mult r5, r7
+	div r5, r8
+	store r5, cel
+	PrintMsg	""
+	PrintMsg	"Equation: ((71 - 32) * 5) / 9"
+	PrintMsg	"The Contents of Celsius: "
+	PrintReg	r5
+	PrintMsg	"The Remainder: "
+	PrintReg	r6
 
+	//seconds = minutes * 60 + seconds
+	mult r10, r11
+	add r10, r9
+	store r10, seconds
+	PrintMsg	""
+	PrintMsg	"Equation: (8 * 60) + 30"
+	PrintMsg	"The Contents of seconds: "
+	PrintReg	r10
+	PrintMsg	"============================================="
+	PrintMsg	"                End Of Program
+	PrintMsg	"============================================="
 	return
