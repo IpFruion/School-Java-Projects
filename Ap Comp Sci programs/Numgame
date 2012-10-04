@@ -71,13 +71,17 @@ compare
 	jmpNeg r2, lower
 	jmpPos r2, higher
 	PrintMsg	"               YOU WON!!!!!!"
+	
 	endgram
 
 higher
 	PrintMsg	"Higher!!"
-	jmp compare
+	jmp inputr
 lower
 	PrintMsg	"Lower"
+	jmp inputr
+inputr 
+	readchar input
 	jmp compare
 	
 endgram
@@ -95,5 +99,4 @@ main
 	PrintMsg	"               Start of Numgame v 1.0              "
 	PrintMsg	"============================================="
 	PrintMsg	""
-	readchar input
-	jmp powerto
+	jmp inputr
