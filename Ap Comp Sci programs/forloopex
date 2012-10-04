@@ -12,6 +12,17 @@ inputr
 	readchar end
 	PrintMsg	"Input Increment of Loop"
 	readchar increment
+	load r1, start
+	load r2, end
+	load r3, increment
+	loadk r4, 48
+	
+	sub r1, r4
+	store r1, start
+	sub r2, r4
+	store r2, end
+	sub r3, r4
+	store r3, increment
 	jmp forloop
 
 forloop
