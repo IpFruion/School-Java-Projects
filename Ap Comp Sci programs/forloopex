@@ -5,7 +5,14 @@ end int 0
 increment int 1
 //end input
 
-
+inputr
+	PrintMsg	"Input Start of Loop"
+	readchar start
+	PrintMsg	"Input End of Loop"
+	readchar end
+	PrintMsg	"Input Increment of Loop"
+	readchar increment
+	jmp forloop
 
 forloop
 	load r1, start
@@ -34,10 +41,9 @@ endgram
 	PrintMsg	""
 	return
 main
-	main
 	PrintMsg	""
 	PrintMsg	"============================================="
 	PrintMsg	"               Start of Program              "
 	PrintMsg	"============================================="
 	PrintMsg	""
-	jmp forloop
+	jmp inputr
