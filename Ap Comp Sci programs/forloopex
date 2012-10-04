@@ -29,19 +29,19 @@ forloop
 	load r1, start
 	load r2, end
 	load r3, increment
-	
+
+	//Code inside loop here start
+	PrintMsg	"Hello you have outputted me"
+	PrintReg	r1
+	//end	
+
 	sub r2, r1
 	jmpNZero r2, todobefore
-	jmp prostart
+	jmp endgram
 todobefore
 	add r1, r3
 	store r1, start
 	jmp forloop
-prostart
-	
-	//Implement code here
-	
-	jmp endgram
 
 endgram
 	PrintMsg	""
