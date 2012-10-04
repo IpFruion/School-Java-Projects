@@ -4,17 +4,16 @@ ben int 10
 total int 11
 diff int 9
 
-/problem 2 definitions
+//problem 2 definitions
 cd int 5
 dvd int 15
 large int 20
 
+//problem 3 definitions
+cat int 3
+dog int 4
 
-main
-
-  PrintMsg	"============================================="
-	PrintMsg	"               Start of Program              "
-	PrintMsg	"============================================="
+prob1
 	//problem 1 load
 	load r1, abe
 	load r2, ben
@@ -26,19 +25,11 @@ main
 	//start problem 1 execution
 	sub r1, r2
 	jmpZero r1, then1
+	
+	PrintMsg	"Problem 1 answer: Not Equal"
+	//jump to next problem
+	jmp prob2
 	//end problem 1 execution
-
-	//start problem 2 load
-	load r1, cd
-	load r2, dvd
-	load r3, large
-	loadk r4, 1
-
-	PrintMsg	"============================================="
-	PrintMsg	"                End Of Program"
-	PrintMsg	"              by Derrick Lockwood"
-	PrintMsg	"============================================="
-	return
 then1
 	PrintMsg	"Problem 1 answer: Equal"
 	sub r3, r5
@@ -48,5 +39,77 @@ then1
 	store r3, diff
 	PrintMsg	"11 + 10 = 21"
 	PrintReg	r4
+	jmp prob2
+prob2
+	//start problem 2 load
+	load r1, cd
+	load r2, dvd
+	load r3, large
+	loadk r4, 1
+	load r5, diff
+	//end problem 2 load
 
+	//start problem 2 execution
+	sub r1, r2
+	jmpNZero r1, then2
+	jmp else2
+then2
+	add r4, r5
+	store r4, diff
+	PrintMsg	""
+	PrintMsg	"Problem 2 answer: Not Equal"
+	PrintMsg	"9 + 1 = 10     OR     8 + 1 = 9"
+	PrintReg	r4
+	jmp prob3
+else2
+	store r2, large
+	PrintMsg	""
+	PrintMsg	"Problem 2 answer: Equal"
+	PrintMsg	"Setting Large equal to DVD"
+	PrintReg	r2
+	jmp prob3
+
+prob3
+	//start problem 3 load
+	load r1, dog
+	load r2, cat
+	//end of problem 3 load
+	//start of problem 3 execution
+	sub r1, r2
+	jmpZero r1, then3
+	jmpPos r1, then3
+	jmp else3
+then3
+	store r1, large
+	PrintMsg	""
+	PrintMsg	"Problem 3 answer: Greater than or Equal to"
+	PrintMsg	"4 = large"
+	PrintReg	r1
+	jmp endprogram
+else3
+	store r2, large
+	PrintMsg	""
+	PrintMsg	"Problem 3 answer: Less than"
+	PrintMsg	"3 = large"
+	PrintReg	r2
+	jmp endprogram
+
+endprogram
+	PrintMsg	""
+	PrintMsg	"============================================="
+	PrintMsg	"                End Of Program"
+	PrintMsg	"              by Derrick Lockwood"
+	PrintMsg	"============================================="
+	PrintMsg	""
+	return
+	
+main
+	PrintMsg	""
+	PrintMsg	"============================================="
+	PrintMsg	"               Start of Program              "
+	PrintMsg	"============================================="
+	PrintMsg	""
+	jmp prob1
+	
+	
 	//store r4, total
