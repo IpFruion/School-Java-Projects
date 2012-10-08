@@ -51,6 +51,7 @@ prob2
 	
 	PrintMsg	"Contents of char: "
 	PrintReg	r1
+	PrintMsg	""
 	sub r1, r2
 	jmpNeg r1, else2
 	jmpZero r1, else2
