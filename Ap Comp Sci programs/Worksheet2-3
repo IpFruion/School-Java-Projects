@@ -7,8 +7,7 @@ cash int 200
 //problem 2 definitions
 char int 0
 zero int 48
-nine int 57
-dummy int 0
+nine int 58
 
 prob1
 	load r1, amt
@@ -46,15 +45,13 @@ prob2
 	load r1, char
 	load r2, zero
 	load r3, nine
-	load r4, dummy
-	copy r4, r1
+	copy r4, r1	//copy to dummy registar
 	
 	PrintMsg	"Contents of char: "
 	PrintReg	r1
 	PrintMsg	""
 	sub r1, r2
 	jmpNeg r1, else2
-	jmpZero r1, else2
 	//used to shorten the code instead of two ifs just included
 	copy r1, r4
 	
