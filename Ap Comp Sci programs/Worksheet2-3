@@ -8,6 +8,7 @@ cash int 200
 char int 0
 zero int 48
 nine int 58
+q int 113
 
 prob1
 	load r1, amt
@@ -39,17 +40,25 @@ else1
 	jmp prob2
 prob2
 	PrintMsg	""
-	PrintMsg	"Enter in box above^"
+	PrintMsg	"Enter in box above^ To quit write (n)"
 	readChar char
 	
 	load r1, char
 	load r2, zero
 	load r3, nine
+	load r5, q
 	copy r4, r1	//copy to dummy registar
 	
 	PrintMsg	"Contents of char: "
 	PrintReg	r1
 	PrintMsg	""
+	
+	sub r1, r5
+	jmpZero r1, endgram
+	copy r1, r4
+	
+	
+	//Checking Number
 	sub r1, r2
 	jmpNeg r1, else2
 	//used to shorten the code instead of two ifs just included
@@ -59,10 +68,10 @@ prob2
 	jmpPos r1, else2
 	copy r1, r4
 	PrintMsg	"IS a decimal digit"
-	jmp endgram
+	jmp prob2
 else2
 	PrintMsg	"NOT a decimal digit"
-	jmp endgram
+	jmp prob2
 endgram
 	PrintMsg	""
 	PrintMsg	"============================================="
