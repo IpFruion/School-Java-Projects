@@ -53,6 +53,7 @@ prob2
 	PrintReg	r1
 	PrintMsg	""
 	
+	//Check for exit
 	sub r1, r5
 	jmpZero r1, endgram
 	copy r1, r4
