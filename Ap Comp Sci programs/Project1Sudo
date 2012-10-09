@@ -1,0 +1,10 @@
+//Declare Data
+//Start PC
+//Load data
+//  Define Constant
+//  Define Ascii characters
+//Set compare label using for loop
+//  Compare twice each character
+//If ok then writechar
+//If not repeat from top
+//Print results
