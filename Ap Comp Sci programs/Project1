@@ -1,0 +1,62 @@
+char1 int 48
+char2 int 48
+
+start int 0
+end int 1
+increment
+getInput
+	readchar char1
+	readchar char2
+	
+	
+check
+
+inputr
+	load r1, start
+	load r2, end
+	load r3, increment
+	loadk r4, 48
+	
+	sub r1, r4
+	store r1, start
+	sub r2, r4
+	store r2, end
+	sub r3, r4
+	store r3, increment
+	jmp forloop
+
+forloop
+	load r1, start
+	load r2, end
+	load r3, increment
+
+	//Code inside loop here start
+	PrintMsg	"Hello you have outputted me"
+	PrintReg	r1
+	//end	
+
+	sub r2, r1
+	jmpNZero r2, todobefore
+	jmp endgram
+todobefore
+	add r1, r3
+	store r1, start
+	jmp forloop
+
+
+
+endgram
+	PrintMsg	""
+	PrintMsg	"============================================="
+	PrintMsg	"                End Of Program"
+	PrintMsg	"              by Derrick Lockwood"
+	PrintMsg	"============================================="
+	PrintMsg	""
+	return
+main
+	PrintMsg	""
+	PrintMsg	"============================================="
+	PrintMsg	"               Start of Program              "
+	PrintMsg	"============================================="
+	PrintMsg	""
+	jmp getInput
