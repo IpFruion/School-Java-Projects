@@ -5,6 +5,9 @@
 //  Define Ascii characters
 //Set compare label using for loop
 //  Compare twice each character
-//If ok then writechar
+//  Compares with special characters to exit
+//If ok then
+//  Convert to number
+//  Print out
+//  end
 //If not repeat from top
-//Print results
