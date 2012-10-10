@@ -1,13 +1,22 @@
 //Declare Data
-//Start PC
+//Start PC at 
 //Load data
-//  Define Constant
+//  Define Constants for loop
 //  Define Ascii characters
-//Set compare label using for loop
-//  Compare twice each character
-//  Compares with special characters to exit
+//Compare each 2 Inputs
+//  Compares with special characters to exit (~)
+//    end
 //If ok then
-//  Convert to number
+//  Print out the 
+//  Convert to hexadecimal number
+//    by subtracting the hexadecimal value of zero from input
+//    Multiply first char by 10 and set first char to value of
+//    add the first char to second char set first char to value of
+//  output first char
+//  Test for certain number to give out secret (84)
+//    Secret output (Smiley face in emoticon)
 //  Print out
-//  end
-//If not repeat from top
+//  then loop to top
+//If not then
+//  Print not a two digit number
+//  loop to top
