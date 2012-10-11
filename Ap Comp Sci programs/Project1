@@ -1,0 +1,25 @@
+char1 int 48
+char2 int 48
+
+
+getInput
+	readchar char1
+	readchar char2		
+check
+	
+
+endgram
+	PrintMsg	""
+	PrintMsg	"============================================="
+	PrintMsg	"                End Of Program"
+	PrintMsg	"              by Derrick Lockwood"
+	PrintMsg	"============================================="
+	PrintMsg	""
+	return
+main
+	PrintMsg	""
+	PrintMsg	"============================================="
+	PrintMsg	"               Start of Program              "
+	PrintMsg	"============================================="
+	PrintMsg	""
+	jmp getInput
