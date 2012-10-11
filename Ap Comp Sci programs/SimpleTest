@@ -1,8 +1,0 @@
-// A simple GAL program
-main
-	loadk	r1,10
-	copy r2,r1
-	PrintMsg	"The following is the contents of R2"
-	PrintReg	r2
-	return
-
