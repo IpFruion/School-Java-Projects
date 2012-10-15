@@ -1,9 +1,9 @@
+//Start of Load
 char1 int 48
 char2 int 48
 zero int 48
 nine int 58
 ten int 10
-deck int 0
 tilda int 126
 A int 65
 B int 66
@@ -11,11 +11,12 @@ C int 67
 D int 68
 E int 69
 F int 70
+//End of Load
 
 getInput
 	PrintMsg	""
 	PrintMsg	""
-	PrintMsg	"Input a two decimal digit or ~ to exit"
+	PrintMsg	"Input a two decimal digit or ~ and a character to exit"
 	PrintMsg 	""
 	readchar char1
 	readchar char2
@@ -110,8 +111,10 @@ endgram
 	PrintMsg	"              by Derrick Lockwood"
 	PrintMsg	"============================================="
 	PrintMsg	""
+	//End of PC
 	return
 main
+	//Start of PC
 	PrintMsg	""
 	PrintMsg	""
 	PrintMsg	""
