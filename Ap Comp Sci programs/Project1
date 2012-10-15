@@ -1,13 +1,108 @@
 char1 int 48
 char2 int 48
-
+zero int 48
+nine int 58
+ten int 10
+deck int 0
+tilda int 126
+A int 65
+B int 66
+C int 67
+D int 68
+E int 69
+F int 70
 
 getInput
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	"Input a two decimal digit or ~ to exit"
+	PrintMsg 	""
 	readchar char1
-	readchar char2		
+	readchar char2
+	jmp check		
 check
+	load r1, char1
+	load r2, char2
+	load r3, zero
+	load r4, nine
+	load r5, tilda
+	copy r6, r1	//copy to dummy registar
+	copy r7, r2
+		
+	//Check for exit
+	sub r1, r5
+	sub r2, r5
+	jmpZero r1, endgram
+	jmpZero r2, endgram
+	copy r1, r6
+	copy r2, r7
 	
+	
+	//Checking Number
+	sub r1, r3
+	sub r2, r3
+	jmpNeg r1, nodigit
+	jmpNeg r2, nodigit
+	//used to shorten the code instead of two ifs just included
+	copy r1, r6
+	copy r2, r7
+	
+	sub r1, r4
+	sub r2, r4
+	jmpPos r1, nodigit
+	jmpPos r2, nodigit
+	copy r1, r6
+	copy r2, r7
+	jmp hexconvert
 
+nodigit
+	jmp getInput
+
+hexconvert
+	load r8, ten
+	loadk r9, 16
+	sub r1, r3
+	sub r2, r3
+	mult r1, r8
+	add r1, r2
+	
+	//PrintMsg	""
+	//PrintReg	r1
+	//PrintMsg	""
+	
+	div r1, r9
+	
+	//PrintMsg	""
+	//PrintReg	r1
+	//PrintReg	r2
+	//PrintMsg	""
+
+	PrintMsg	"This is the hexadecimal value of what you Entered: "
+	
+	add r1, r3
+	store r1, char1
+	writechar char1
+	
+	copy r4, r2 //used to revert to original to edit with
+	sub r2, r8
+	jmpNeg r2, number
+	copy r2, r4
+	jmp letter
+number
+	copy r2, r4
+	add r2, r3
+	store r2, char2
+	writechar char2
+	
+	jmp getInput
+letter
+	copy r2, r4
+	sub r2, r8
+	load r2, A, r2
+	store r2, char2
+	writechar char2
+	
+	jmp getInput
 endgram
 	PrintMsg	""
 	PrintMsg	"============================================="
@@ -18,8 +113,25 @@ endgram
 	return
 main
 	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
 	PrintMsg	"============================================="
 	PrintMsg	"               Start of Program              "
 	PrintMsg	"============================================="
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
+	PrintMsg	""
 	PrintMsg	""
 	jmp getInput

@@ -3,22 +3,30 @@
 //Load data
 //  Define Constants for loop
 //  Define Ascii characters
+//  Define decimal
 //Print out give a two digit number
 //get input
 //Compare each 2 Inputs //<------- How are you going to verify each digit?
 //  by 48<=x<=57
-//  copy and subract
+//  copy to "dummy reg"
+//  subtract with 48 and 57
 //  Compares with special characters to exit (~)
 //    end
 //If ok then
 //  Print out a digit
-//  Convert to hexadecimal number //<-------- How are going to determine the 2 hex digits?
+//  Convert to hexadecimal number // { <-------- How are going to determine the 2 hex digits?
 //    by subtracting the hexadecimal value of zero from input
 //    Multiply first char by 10 and set first char to value of
 //    add the first char to second char set first char to value of
-//  output first char
-//  Print out
-//  loop
+//  Take the answer store in var decimal
+//  Take decimal and divide by 16
+//  Take that number add 48 to it and write char
+//  Take the remainder and compare
+//    if 10-15
+//      output letters (A,B,C,D,E,F) Corresponding with the hex decimal value
+//    not
+//      add 48 and write char // }
+//  loop to top
 //If not then
 //  print out not a digit
 //  loop to top
