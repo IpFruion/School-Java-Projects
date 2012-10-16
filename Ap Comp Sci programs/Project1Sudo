@@ -4,16 +4,15 @@
 //  Define Constants for loop
 //  Define Ascii characters
 //  Define decimal
-//Print out give a two digit number
+//Print out prompt
 //get input
 //Compare each 2 Inputs //<------- How are you going to verify each digit?
-//  by 48<=x<=57
-//  copy to "dummy reg"
-//  subtract with 48 and 57
+//  copy to "dummy" reg
 //  Compares with special characters to exit (~)
-//    end
-//If ok then
-//  Print out a digit
+//  by 48<=x<=57
+//  subtract with 48 and 58 considering we want to keep 57
+//  end
+//If digit then
 //  Convert to hexadecimal number // { <-------- How are going to determine the 2 hex digits?
 //    by subtracting the hexadecimal value of zero from input
 //    Multiply first char by 10 and set first char to value of
@@ -28,9 +27,5 @@
 //      add 48 and write char // }
 //  loop to top
 //If not then
-//  print out not a digit
+//  print out which digit is not a digit
 //  loop to top
-
-
-
-//Dealing with 31 by compare if two digit then print out 31 and determine hex of it and print then loop if not don't print out then loop //<--------How are you going to deal with the decimal number 31?

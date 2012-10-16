@@ -20,7 +20,7 @@ getInput
 	//Read in input
 	PrintMsg	""
 	PrintMsg	""
-	PrintMsg	"Input a two decimal digit or ~ and a character to exit"
+	PrintMsg	"Input a two decimal digit or (~) and a character to exit"
 	PrintMsg 	""
 	readchar char1
 	readchar char2
@@ -61,9 +61,11 @@ check
 	jmp hexconvert
 
 nodigit1
+	PrintMsg	""
 	PrintMsg	"First Character not a Digit"
 	jmp getInput
 nodigit2
+	PrintMsg	""
 	PrintMsg	"Second Character not a Digit"
 	jmp getInput
 hexconvert
