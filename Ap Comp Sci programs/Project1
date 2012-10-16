@@ -90,6 +90,7 @@ hexconvert
 	//PrintMsg	""
 
 	PrintMsg	"This is the hexadecimal value of what you Entered: "
+	PrintMsg	""
 	
 	writechar zero
 	writechar x
