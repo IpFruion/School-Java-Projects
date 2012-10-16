@@ -22,10 +22,11 @@ getInput
 	PrintMsg	""
 	PrintMsg	"Input a two decimal digit or (~) and a character to exit"
 	PrintMsg 	""
-	readchar char1
+	readchar char1  //get input
 	readchar char2
 	jmp check		
 check
+	//compare each input
 	load r1, char1
 	load r2, char2
 	load r3, zero
@@ -34,7 +35,7 @@ check
 	copy r6, r1	//copy to "dummy" register
 	copy r7, r2	//copy to "dummy" registar
 		
-	//Check for exit with the return
+	//compares with special character to exit (~)
 	sub r1, r5
 	sub r2, r5
 	jmpZero r1, endgram
@@ -43,22 +44,22 @@ check
 	copy r2, r7
 	
 	
-	//Checking Number
-	sub r1, r3
+	//Checking Number by 48<=x<=57
+	sub r1, r3	//subtract with 48 and compare below
 	sub r2, r3
-	jmpNeg r1, nodigit1
+	jmpNeg r1, nodigit1 //If not a digit then
 	jmpNeg r2, nodigit2
 	//used to shorten the code instead of two ifs just included
 	copy r1, r6
 	copy r2, r7
 	
-	sub r1, r4
+	sub r1, r4	//subtract with 58 and compare zero and above
 	sub r2, r4
-	jmpPos r1, nodigit1
+	jmpPos r1, nodigit1 //If not a digit then
 	jmpPos r2, nodigit2
 	copy r1, r6
 	copy r2, r7
-	jmp hexconvert
+	jmp hexconvert //If digit then
 
 nodigit1
 	PrintMsg	""
@@ -69,18 +70,19 @@ nodigit2
 	PrintMsg	"Second Character not a Digit"
 	jmp getInput
 hexconvert
+			//Convert to hexadecimal number
 	load r8, ten
 	loadk r9, 16
-	sub r1, r3
+	sub r1, r3	//subtracting the hexadecimal value of 48 from both inputs
 	sub r2, r3
-	mult r1, r8
-	add r1, r2
+	mult r1, r8	//Multiply first char by 10
+	add r1, r2	//add the first char to second
 	
 	//PrintMsg	""
 	//PrintReg	r1
 	//PrintMsg	""
 	
-	div r1, r9
+	div r1, r9 	//Take answer and divide by 16
 	
 	//PrintMsg	""
 	//PrintReg	r1
@@ -94,30 +96,28 @@ hexconvert
 	writechar zero
 	writechar zero
 
-	add r1, r3
+	add r1, r3	//Take that number add 48 to it and write character
 	store r1, char1
 	writechar char1
 	
-	copy r4, r2 //used to revert to original to edit with
+	copy r4, r2	//Take the remainder and compare
 	sub r2, r8
-	jmpNeg r2, number
+	jmpNeg r2, number //if less than 10
 	copy r2, r4
-	jmp letter
+	jmp letter	//if 10-15
 number
-	copy r2, r4
+	copy r2, r4	//add 48 and write character
 	add r2, r3
 	store r2, char2
 	writechar char2
-	
-	jmp getInput
+	jmp getInput	//loop to top
 letter
-	copy r2, r4
+	copy r2, r4 	//output letters A-F corresponding with the hexadecimal value
 	sub r2, r8
-	load r2, A, r2
+	load r2, A, r2	//Index to load from
 	store r2, char2
 	writechar char2
-	
-	jmp getInput
+	jmp getInput	//loop to top
 endgram
 	PrintMsg	""
 	PrintMsg	"============================================="

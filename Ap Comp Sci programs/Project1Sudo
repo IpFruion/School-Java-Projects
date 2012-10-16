@@ -6,26 +6,27 @@
 //  Define decimal
 //Print out prompt
 //get input
-//Compare each 2 Inputs //<------- How are you going to verify each digit?
+//Compare each Input //<------- How are you going to verify each digit?
 //  copy to "dummy" reg
-//  Compares with special characters to exit (~)
+//  Compares with special character to exit (~)
+//    end program
 //  by 48<=x<=57
 //  subtract with 48 and 58 considering we want to keep 57
-//  end
 //If digit then
 //  Convert to hexadecimal number // { <-------- How are going to determine the 2 hex digits?
-//    by subtracting the hexadecimal value of zero from input
-//    Multiply first char by 10 and set first char to value of
-//    add the first char to second char set first char to value of
-//  Take the answer store in var decimal
-//  Take decimal and divide by 16
+//    by subtracting the hexadecimal value of 48 from both inputs
+//    Multiply first char by 10
+//    add the first char to second char
+//  Take answer and divide by 16
 //  Take that number add 48 to it and write char
 //  Take the remainder and compare
 //    if 10-15
 //      output letters (A,B,C,D,E,F) Corresponding with the hex decimal value
+//	use index to get letters
+//	write character
 //    not
-//      add 48 and write char // }
+//      add 48 and write character // }
 //  loop to top
-//If not then
+//If not a digit then
 //  print out which digit is not a digit
 //  loop to top
