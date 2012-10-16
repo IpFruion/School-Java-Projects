@@ -5,15 +5,19 @@ zero int 48
 nine int 58
 ten int 10
 tilda int 126
+x int 120
+//Start of Index
 A int 65
 B int 66
 C int 67
 D int 68
 E int 69
 F int 70
+//End of Index
 //End of Load
 
 getInput
+	//Read in input
 	PrintMsg	""
 	PrintMsg	""
 	PrintMsg	"Input a two decimal digit or ~ and a character to exit"
@@ -27,10 +31,10 @@ check
 	load r3, zero
 	load r4, nine
 	load r5, tilda
-	copy r6, r1	//copy to dummy registar
-	copy r7, r2
+	copy r6, r1	//copy to "dummy" register
+	copy r7, r2	//copy to "dummy" registar
 		
-	//Check for exit
+	//Check for exit with the return
 	sub r1, r5
 	sub r2, r5
 	jmpZero r1, endgram
@@ -42,23 +46,26 @@ check
 	//Checking Number
 	sub r1, r3
 	sub r2, r3
-	jmpNeg r1, nodigit
-	jmpNeg r2, nodigit
+	jmpNeg r1, nodigit1
+	jmpNeg r2, nodigit2
 	//used to shorten the code instead of two ifs just included
 	copy r1, r6
 	copy r2, r7
 	
 	sub r1, r4
 	sub r2, r4
-	jmpPos r1, nodigit
-	jmpPos r2, nodigit
+	jmpPos r1, nodigit1
+	jmpPos r2, nodigit2
 	copy r1, r6
 	copy r2, r7
 	jmp hexconvert
 
-nodigit
+nodigit1
+	PrintMsg	"First Character not a Digit"
 	jmp getInput
-
+nodigit2
+	PrintMsg	"Second Character not a Digit"
+	jmp getInput
 hexconvert
 	load r8, ten
 	loadk r9, 16
@@ -80,6 +87,11 @@ hexconvert
 
 	PrintMsg	"This is the hexadecimal value of what you Entered: "
 	
+	writechar zero
+	writechar x
+	writechar zero
+	writechar zero
+
 	add r1, r3
 	store r1, char1
 	writechar char1
@@ -117,24 +129,9 @@ main
 	//Start of PC
 	PrintMsg	""
 	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
 	PrintMsg	"============================================="
 	PrintMsg	"               Start of Program              "
 	PrintMsg	"============================================="
-	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
-	PrintMsg	""
 	PrintMsg	""
 	PrintMsg	""
 	jmp getInput
