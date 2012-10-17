@@ -1,4 +1,4 @@
-//Start of Load
+			//Start of Load
 char1 int 48
 char2 int 48
 zero int 48
@@ -6,18 +6,18 @@ nine int 58
 ten int 10
 tilda int 126
 x int 120
-//Start of Index
+			//Start of Index
 A int 65
 B int 66
 C int 67
 D int 68
 E int 69
 F int 70
-//End of Index
-//End of Load
+			//End of Index
+			//End of Load
 
 getInput
-	//Read in input
+			//Read in input
 	PrintMsg	""
 	PrintMsg	""
 	PrintMsg	"Input a two decimal digit or (~) and a character to exit"
@@ -26,7 +26,7 @@ getInput
 	readchar char2
 	jmp check		
 check
-	//compare each input
+			//compare each input
 	load r1, char1
 	load r2, char2
 	load r3, zero
@@ -35,7 +35,7 @@ check
 	copy r6, r1	//copy to "dummy" register
 	copy r7, r2	//copy to "dummy" registar
 		
-	//compares with special character to exit (~)
+			//compares with special character to exit (~)
 	sub r1, r5
 	sub r2, r5
 	jmpZero r1, endgram
@@ -44,12 +44,12 @@ check
 	copy r2, r7
 	
 	
-	//Checking Number by 48<=x<=57
+			//Checking Number by 48<=x<=57
 	sub r1, r3	//subtract with 48 and compare below
 	sub r2, r3
 	jmpNeg r1, nodigit1 //If not a digit then
 	jmpNeg r2, nodigit2
-	//used to shorten the code instead of two ifs just included
+			//used to shorten the code instead of two ifs just included
 	copy r1, r6
 	copy r2, r7
 	
@@ -59,7 +59,7 @@ check
 	jmpPos r2, nodigit2
 	copy r1, r6
 	copy r2, r7
-	jmp hexconvert //If digit then
+	jmp hexconvert 	//If digit then
 
 nodigit1
 	PrintMsg	""
