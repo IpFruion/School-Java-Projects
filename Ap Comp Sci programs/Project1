@@ -20,7 +20,7 @@ getInput
 			//Read in input
 	PrintMsg	""
 	PrintMsg	""
-	PrintMsg	"Input a two decimal digit or (~) and a character to exit"
+	PrintMsg	"Input a two decimal digit or ~~ to exit"
 	PrintMsg 	""
 	readchar char1  //get input
 	readchar char2
@@ -126,10 +126,10 @@ endgram
 	PrintMsg	"              by Derrick Lockwood"
 	PrintMsg	"============================================="
 	PrintMsg	""
-	//End of PC
+			//End of PC
 	return
 main
-	//Start of PC
+			//Start of PC
 	PrintMsg	""
 	PrintMsg	""
 	PrintMsg	"============================================="
