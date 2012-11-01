@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Worksheet32 here.
  * 
@@ -29,25 +28,25 @@ public class Worksheet32
         //problem 1
         System.out.println("Type in a integer fahrenheit Temperature: ");
         tempfahrenheit = s.nextInt();
-        celsius = (tempfahrenheit - 32)*(5)/(9);
+        celsius = 5/9 * (tempfahrenheit - 32);
         System.out.println(celsius+"\n");
         
         //problem 2
         System.out.println("Type in a integer celsius Temperature: ");
         tempcelsius = s.nextInt();
-        fahrenheit = (tempcelsius * (9)/(5)) + 32;
+        fahrenheit = (tempcelsius * 9/5) + 32;
         System.out.println(fahrenheit+"\n");
         
         //problem 3
         System.out.println("Type in a double fahrenheit Temperature: ");
         tempfahrenheit1 = s.nextDouble();
-        celsius1 = (tempfahrenheit1 - 32)* (5)/(9);
+        celsius1 = 5/9 * (tempfahrenheit1 - 32);
         System.out.println(celsius1+"\n");
         
         //problem 4
         System.out.println("Type in a double celsius Temperature: ");
         tempcelsius1 = s.nextDouble();
-        fahrenheit1 = (tempcelsius1 * (9)/(5)) + 32;
+        fahrenheit1 = (tempcelsius1 * 9/5) + 32;
         System.out.println(fahrenheit1+"\n");
     }
 }
