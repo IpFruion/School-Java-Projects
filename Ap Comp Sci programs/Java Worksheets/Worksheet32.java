@@ -48,5 +48,7 @@ public class Worksheet32
         tempcelsius1 = s.nextDouble();
         fahrenheit1 = (tempcelsius1 * 9/5) + 32;
         System.out.println(fahrenheit1+"\n");
+        
+        //problem 5: Because by calling for a double you are getting and using a more exact formula because integers do not have decimals
     }
 }
