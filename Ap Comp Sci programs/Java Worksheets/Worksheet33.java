@@ -13,7 +13,7 @@ public class Worksheet33
     {
         //definitions
         int input;
-        int output;
+        int output = 0;
         int number_negative = 0;
         int number_positive = 0;
         Scanner s = new Scanner(System.in);
@@ -30,11 +30,13 @@ public class Worksheet33
         }
         else
         {
-            output = (input+5) /10 *10;
+            output = (input+5) *10 /10;
             number_positive = number_positive + 1;
         }
-        
         System.out.println("Original input: " +input+ " Output value is: " +output);
-        
+        while (input != 0) {
+            input = 0;
+            System.out.println("Number of Positive numbers: "+ number_positive + "\nNumber of Negative numbers: " + number_negative);
+        }
     }
 }
