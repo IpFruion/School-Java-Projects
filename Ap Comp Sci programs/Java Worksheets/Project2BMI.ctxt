@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ main()
+comment0.text=\n\ Design\:\n\ Needs\ to\ include\:\n\ -the\ website\ where\ I\ got\ the\ BMI\ Info\n\ -the\ formula\ you\ will\ use\ to\ compute\ BMI\n\ -the\ names\ &\ bounds\ of\ the\ 4\ Weight\ status\ categories\n\ -All\ data\ definitions\ for\ both\ variables\ &\ constants\ you\ will\ use\n\ -how\ you\ will\ compute\ the\ info\ telling\ the\ user\ modify\ their\ BMI\n\ -the\ pseudo\ code\ for\ your\ program\n\ \n\ Start\ of\ Design\:\n\ -start\ at\ main\ method\n\ -define\ data\n\ --input\ data\:\ height(inches),\ weight(lbs)\n\ --constant\ data\:\ status\n
+numComments=1
