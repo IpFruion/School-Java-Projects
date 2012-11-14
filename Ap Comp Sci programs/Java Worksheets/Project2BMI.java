@@ -24,16 +24,17 @@ public class Project2BMI
      //run the math to compute the BMI
         //answerbmi = (height * height * BMI_CONSTANT) / (weight * BMI_CONSTANT)
      //run the math to compute the suggested weight
-        //suggestedweight = height*height*NORMAL/BMI_CONSTANT
+        //suggestedweightMin = height*height*UNDERWEIGHT/BMI_CONSTANT
+        //suggestedweightMax = height*height*NORMAL/BMI_CONSTANT
      //check the BMI with the Bounds to determine the status of the BMI
         //Underweight = answer < UNDERWEIGHT
-            //Output "Underweight" and suggestedweight - weight
+            //Output "Underweight" and suggestedweightMin - weight
         //Normal = UNDERWEIGHT < answer < NORMAL
             //Output "Normal"
         //Overweight = NORMAL < answer < OVERWEIGHT
-            //Output "Overweight" and weight - suggestedweight
+            //Output "Overweight" and weight - suggestedweightMax
         //Obese = answer > OBESE
-            //Output "Obese" and weight - suggestedweight
+            //Output "Obese" and weight - suggestedweightMax
      //end while loop
      //end while loop
     public static void main()
