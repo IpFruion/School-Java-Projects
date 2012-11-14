@@ -11,8 +11,10 @@ public class Project2BMI
      //start at main method
      //define data
         //data: height(inches), weight(lbs), answerbmi, suggestedweight
-        //constant data: UNDERWEIGHT = 18.5, NORMAL = 24.9, OVERWEIGHT = 29.9, OBESE = 30.0, BMI_CONSTANT = 703, HEAVIEST_PERSON = 1400, TALLEST_PERSON = 100, LIGHTEST_PERSON = 10/16
+        //constant data: UNDERWEIGHT = 18.5, NORMAL = 24.9, OVERWEIGHT = 29.9, OBESE = 30.0, BMI_CONSTANT = 703, HEAVIEST_PERSON = 1400, TALLEST_PERSON = 100, LIGHTEST_PERSON = 50
      //start at main
+     //start while loop
+     //start while loop
      //prompt for and assign input to height(int) and weight input(double)
      //check for the correctness of the input
         //if not 0<height<TALLEST_PERSON
@@ -32,6 +34,8 @@ public class Project2BMI
             //Output "Overweight" and weight - suggestedweight
         //Obese = answer > OBESE
             //Output "Obese" and weight - suggestedweight
+     //end while loop
+     //end while loop
     public static void main()
     {
         
