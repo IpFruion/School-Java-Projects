@@ -29,6 +29,7 @@ public class Project2BMI
         final double TALLEST_PERSON = 100.;
         final double SHORTEST_PERSON = 1.;
         //start while loop << to break out of this when input = zero
+        System.out.println("A program by Derrick Lockwood production");
         while (true) {
             //start while loop << to break out of this when not correct input
             while (true) {
@@ -66,27 +67,32 @@ public class Project2BMI
             suggestedweightMax = height*height*NORMAL/BMI_CONSTANT;
             //check the BMI with the Bounds to determine the status of the BMI
             //if answerbmi < UNDERWEIGHT
-            if (answerbmi < UNDERWEIGHT)
+            if (answerbmi <= UNDERWEIGHT)
             {
                 //Output "Underweight" and suggestedweightMin - weight
                 suggestedweight = suggestedweightMin - weight;
                 System.out.println("Underweight:\nYour BMI is: " +answerbmi+"\n You need to gain: "+suggestedweight+"lbs\n");
             }
             //if UNDERWEIGHT < answerbmi < NORMAL
-            if (UNDERWEIGHT < answerbmi || answerbmi < NORMAL)
+            if (UNDERWEIGHT < answerbmi || answerbmi <= NORMAL)
             {
                 //Output "Normal"
                 System.out.println("Normal:\nYour BMI is: "+answerbmi+"\n");
             }
             //if NORMAL < answerbmi < OVERWEIGHT
-            if (NORMAL < answerbmi || answerbmi < OVERWEIGHT)
+            if (NORMAL < answerbmi || answerbmi <= OVERWEIGHT)
             {
                 suggestedweight = weight - suggestedweightMax;
                 //Output "Overweight" and weight - suggestedweightMax
-                
+                System.out.println("Overweight: \nYour BMI is: "+answerbmi+"\n You need to lose: "+suggestedweight);
             }
             //if answerbmi > OBESE
-            //Output "Obese" and weight - suggestedweightMax
+            if (answerbmi > OBESE)
+            {
+                suggestedweight = weight - suggestedweightMax;
+                //Output "Obese" and weight - suggestedweightMax
+                System.out.println("Obese: \nYour BMI is: "+answerbmi+"\n You need to lose: "+suggestedweight);
+            }
             //end while loop
             }
             //end while loop
