@@ -15,7 +15,7 @@ public class Project2BMI
      //start at main
      public static void main(){
          //data: height(inches), weight(lbs), answerbmi, suggestedweightMin, scanin, suggestedweightMax, suggestedweight
-         double weight, answerbmi, suggestedweightMin, suggestedweightMax, suggestedweight;
+         double weight, answerbmi, suggestedweightMin, suggestedweightMax, suggestedweight, answerbmifloat;
          Scanner scanin = new Scanner(System.in);
          double height;
         //constant data: UNDERWEIGHT = 18.5, NORMAL = 24.9, OVERWEIGHT = 29.9, OBESE = 30.0, BMI_CONSTANT = 703, HEAVIEST_PERSON = 1400, TALLEST_PERSON = 100, LIGHTEST_PERSON = 50, SHORTEST_PERSON = 1
@@ -70,28 +70,32 @@ public class Project2BMI
             if (answerbmi <= UNDERWEIGHT)
             {
                 //Output "Underweight" and suggestedweightMin - weight
+                answerbmifloat = (int)(answerbmi * 100);
                 suggestedweight = suggestedweightMin - weight;
-                System.out.println("Underweight:\nYour BMI is: " +answerbmi+"\n You need to gain: "+suggestedweight+"lbs\n");
+                System.out.println("Underweight:\nYour BMI is: " +answerbmifloat/100+"\n You need to gain: "+suggestedweight+"lbs\n");
             }
             //if UNDERWEIGHT < answerbmi < NORMAL
             if (UNDERWEIGHT < answerbmi && answerbmi <= NORMAL)
             {
+                answerbmifloat = (int)(answerbmi * 100);
                 //Output "Normal"
-                System.out.println("Normal:\nYour BMI is: "+answerbmi+"\n");
+                System.out.println("Normal:\nYour BMI is: "+answerbmifloat/100+"\n");
             }
             //if NORMAL < answerbmi < OVERWEIGHT
             if (NORMAL < answerbmi && answerbmi <= OVERWEIGHT)
             {
+                answerbmifloat = (int)(answerbmi * 100);
                 suggestedweight = weight - suggestedweightMax;
                 //Output "Overweight" and weight - suggestedweightMax
-                System.out.println("Overweight: \nYour BMI is: "+answerbmi+"\n You need to lose: "+suggestedweight);
+                System.out.println("Overweight: \nYour BMI is: "+answerbmifloat/100+"\n You need to lose: "+suggestedweight);
             }
             //if answerbmi > OBESE
             if (answerbmi > OBESE)
             {
+                answerbmifloat = (int)(answerbmi * 100);
                 suggestedweight = weight - suggestedweightMax;
                 //Output "Obese" and weight - suggestedweightMax
-                System.out.println("Obese: \nYour BMI is: "+answerbmi+"\n You need to lose: "+suggestedweight);
+                System.out.println("Obese: \nYour BMI is: "+answerbmifloat/100+"\n You need to lose: "+suggestedweight);
             }
             //end while loop
             }
