@@ -59,7 +59,7 @@ public class Project2BMI
             }
             //run the math to compute the BMI
             //answerbmi = (height * height * BMI_CONSTANT) / (weight * BMI_CONSTANT)
-            answerbmi = height * height * BMI_CONSTANT / (weight * BMI_CONSTANT);
+            answerbmi = weight / (height * height) * BMI_CONSTANT;
             //run the math to compute the suggested weight
             //suggestedweightMin = height*height*UNDERWEIGHT/BMI_CONSTANT
             suggestedweightMin = height*height*UNDERWEIGHT/BMI_CONSTANT;
@@ -74,13 +74,13 @@ public class Project2BMI
                 System.out.println("Underweight:\nYour BMI is: " +answerbmi+"\n You need to gain: "+suggestedweight+"lbs\n");
             }
             //if UNDERWEIGHT < answerbmi < NORMAL
-            if (UNDERWEIGHT < answerbmi || answerbmi <= NORMAL)
+            if (UNDERWEIGHT < answerbmi && answerbmi <= NORMAL)
             {
                 //Output "Normal"
                 System.out.println("Normal:\nYour BMI is: "+answerbmi+"\n");
             }
             //if NORMAL < answerbmi < OVERWEIGHT
-            if (NORMAL < answerbmi || answerbmi <= OVERWEIGHT)
+            if (NORMAL < answerbmi && answerbmi <= OVERWEIGHT)
             {
                 suggestedweight = weight - suggestedweightMax;
                 //Output "Overweight" and weight - suggestedweightMax
