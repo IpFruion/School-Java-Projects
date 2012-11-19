@@ -34,7 +34,7 @@ public class Project2BMI
             //start while loop << to break out of this when not correct input
             while (true) {
                 //prompt for and assign input to height(int) and weight input(double)
-            System.out.println("Please enter your height(in)(ex. 5.9ft -> 70.8in): ");
+            System.out.println("Please enter your height(in)(ex. 5.9ft -> 70.8in) or (zero then zero to exit): ");
             height = scanin.nextDouble();
             System.out.println("Please enter your weight(lbs)(ex. 120lbs): ");
             weight = scanin.nextDouble();
@@ -62,43 +62,44 @@ public class Project2BMI
             answerbmi = weight / (height * height) * BMI_CONSTANT;
             //run the math to compute the suggested weight
             //suggestedweightMin = height*height*UNDERWEIGHT/BMI_CONSTANT
-            suggestedweightMin = height*height*UNDERWEIGHT/BMI_CONSTANT;
+            suggestedweightMin = height*height*UNDERWEIGHT/BMI_CONSTANT + 1;
             //suggestedweightMax = height*height*NORMAL/BMI_CONSTANT
-            suggestedweightMax = height*height*NORMAL/BMI_CONSTANT;
+            suggestedweightMax = height*height*NORMAL/BMI_CONSTANT + 1;
             //truncate to make user friendly
             answerbmifloat = (double)((int)(answerbmi * 10))/10;
-            suggestedweightMin = (double)((int)(suggestedweightMin*10))/10;
-            suggestedweightMax = (double)((int)(suggestedweightMax*10))/10;
             //check the BMI with the Bounds to determine the status of the BMI
             //if answerbmi < UNDERWEIGHT
             if (answerbmi <= UNDERWEIGHT)
             {
                 
                 suggestedweight = suggestedweightMin - weight;
+                suggestedweight = (double)((int)(suggestedweight * 10))/10;
                 //Output "Underweight" and suggestedweightMin - weight
-                System.out.println("Underweight:\nYour BMI is: " +answerbmifloat+"\n You need to gain: "+suggestedweight+"lbs\n");
+                System.out.println("\nUnderweight:\nYour BMI is: " +answerbmifloat+"\n You need to gain: "+suggestedweight+"lbs\n");
             }
             //if UNDERWEIGHT < answerbmi < NORMAL
             if (UNDERWEIGHT < answerbmi && answerbmi <= NORMAL)
             {
                 //Output "Normal"
-                System.out.println("Normal:\nYour BMI is: "+answerbmifloat+"\n");
+                System.out.println("\nNormal:\nYour BMI is: "+answerbmifloat+"\n");
             }
             //if NORMAL < answerbmi < OVERWEIGHT
             if (NORMAL < answerbmi && answerbmi <= OVERWEIGHT)
             {
                 
                 suggestedweight = weight - suggestedweightMax;
+                suggestedweight = (double)((int)(suggestedweight * 10))/10;
                 //Output "Overweight" and weight - suggestedweightMax
-                System.out.println("Overweight: \nYour BMI is: "+answerbmifloat+"\n You need to lose: "+suggestedweight);
+                System.out.println("\nOverweight: \nYour BMI is: "+answerbmifloat+"\n You need to lose: "+suggestedweight);
             }
             //if answerbmi > OBESE
             if (answerbmi > OBESE)
             {
                 
                 suggestedweight = weight - suggestedweightMax;
+                suggestedweight = (double)((int)(suggestedweight * 10))/10;
                 //Output "Obese" and weight - suggestedweightMax
-                System.out.println("Obese: \nYour BMI is: "+answerbmifloat+"\n You need to lose: "+suggestedweight);
+                System.out.println("\nObese: \nYour BMI is: "+answerbmifloat+"\n You need to lose: "+suggestedweight);
             }
             //end while loop
             }
