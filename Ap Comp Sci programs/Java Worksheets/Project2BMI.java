@@ -1,9 +1,9 @@
 /**
- * Write a description of class Project2BMI here.
- * 
- * @author Derrick Lockwood
- * @version 11-11-12
- */
+* Write a description of class Project2BMI here.
+*
+* @author Derrick Lockwood
+* @version 11-11-12
+*/
 import java.util.Scanner;
 public class Project2BMI
 {
@@ -29,31 +29,31 @@ public class Project2BMI
         //start while loop << to break out of this when input = zero
         System.out.println("A program by Derrick Lockwood production");
         while (true) {
-            //start while loop << to break out of this when not correct input
-            while (true) {
-                //prompt for and assign input to height(int) and weight input(double)
-            System.out.println("Please enter your height(in)(ex. 5.9ft -> 70.8in) or (zero then zero to exit): ");
+            //prompt for and assign input to height(int) and weight input(double)
+            System.out.println("Please enter your height(in)(ex. 5.9ft -> 70.8in) or (zero to exit): ");
             height = scanin.nextDouble();
-            System.out.println("Please enter your weight(lbs)(ex. 120lbs): ");
-            weight = scanin.nextDouble();
             //check if zero
-            if (height == 0 || weight == 0) {
+            if (height == 0) {
                 System.out.println("Exiting Program \n");
                 //return out of program
                 return;
             }
+            System.out.println("Please enter your weight(lbs)(ex. 120lbs): ");
+            weight = scanin.nextDouble();
             //check for the correctness of the input
                 //if not SHORTEST_PERSON<height or not height<TALLEST_PERSON
-            if (!(SHORTEST_PERSON<height) || !(height<TALLEST_PERSON)){
+            if (!(SHORTEST_PERSON<height) || !(height<TALLEST_PERSON))
+            {
                 System.out.println("Not within height range");
-                //break out of closest loop   
-                break;
+                //continue out of closest loop
+                continue;
             }
-                //if not LIGHTEST_PERSON<weight or not weight<HEAVIEST_PERSON
-            if (!(LIGHTEST_PERSON<weight) || !(weight<HEAVIEST_PERSON)){
+            //if not LIGHTEST_PERSON<weight or not weight<HEAVIEST_PERSON
+            if (!(LIGHTEST_PERSON<weight) || !(weight<HEAVIEST_PERSON))
+            {
                 System.out.println("Not within weight range\n");
-                //break out of closest loop
-                break;
+                //continue out of closest loop
+                continue;
             }
             //run the math to compute the BMI
             //answerbmi = (height * height * BMI_CONSTANT) / (weight * BMI_CONSTANT)
@@ -69,7 +69,6 @@ public class Project2BMI
             //if answerbmi < UNDERWEIGHT
             if (answerbmi <= UNDERWEIGHT)
             {
-                
                 suggestedweight = suggestedweightMin - weight;
                 suggestedweight = (double)((int)(suggestedweight * 10))/10;
                 //Output "Underweight" and suggestedweightMin - weight
@@ -84,7 +83,6 @@ public class Project2BMI
             //if NORMAL < answerbmi < OVERWEIGHT
             if (NORMAL < answerbmi && answerbmi <= OVERWEIGHT)
             {
-                
                 suggestedweight = weight - suggestedweightMax;
                 suggestedweight = (double)((int)(suggestedweight * 10))/10;
                 //Output "Overweight" and weight - suggestedweightMax
@@ -92,14 +90,11 @@ public class Project2BMI
             }
             //if answerbmi > OBESE
             if (answerbmi > OBESE)
-            {
-                
+            {    
                 suggestedweight = weight - suggestedweightMax;
                 suggestedweight = (double)((int)(suggestedweight * 10))/10;
                 //Output "Obese" and weight - suggestedweightMax
                 System.out.println("\nObese: \nYour BMI is: "+answerbmifloat+"\n You need to lose: "+suggestedweight);
-            }
-            //end while loop
             }
             //end while loop
         }
