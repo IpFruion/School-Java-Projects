@@ -10,9 +10,9 @@
       //True: return out of program
    //check for the correctness of the input
       //if not SHORTEST_PERSON<height or not height<TALLEST_PERSON
-         //break out of closest loop
+         //continue out of closest loop
       //if not LIGHTEST_PERSON<weight or not weight<HEAVIEST_PERSON
-         //break out of closest loop
+         //continue out of closest loop
    //run the math to compute the BMI and get into range with the 1lb
       //answerbmi = weight / (height * height) * BMI_CONSTANT + 1
    //run the math to compute the suggested weight and get into range with the 1lb
