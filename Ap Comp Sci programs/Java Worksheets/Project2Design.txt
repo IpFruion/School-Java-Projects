@@ -5,31 +5,29 @@
    //data: height(inches), weight(lbs), answerbmi, suggestedweightMin, scanin, suggestedweightMax, suggestedweight
    //constant data: UNDERWEIGHT = 18.5, NORMAL = 24.9, OVERWEIGHT = 29.9, OBESE = 30.0, BMI_CONSTANT = 703, HEAVIEST_PERSON = 1400, TALLEST_PERSON = 100, LIGHTEST_PERSON = 50, SHORTEST_PERSON = 1
 //start while loop << to break out of this when input = zero
-   //start while loop << to break out of this when not correct input
-      //prompt for and assign input to height(int) and weight input(double)
-      //check if zero
-         //True: return out of program
-      //check for the correctness of the input
-         //if not SHORTEST_PERSON<height or not height<TALLEST_PERSON
-            //break out of closest loop
-         //if not LIGHTEST_PERSON<weight or not weight<HEAVIEST_PERSON
-            //break out of closest loop
-      //run the math to compute the BMI and get into range with the 1lb
-         //answerbmi = weight / (height * height) * BMI_CONSTANT + 1
-      //run the math to compute the suggested weight and get into range with the 1lb
-         //suggestedweightMin = height*height*UNDERWEIGHT/BMI_CONSTANT + 1
-         //truncate the answerbmi to make user friendly
-      //check the BMI with the Bounds to determine the status of the BMI
-         //if answerbmi < UNDERWEIGHT
-            //find suggested weight (suggestedweightMin - weight) and truncate to 10ths place
-            //Output "Underweight" and answerbmi and suggestedweight
-         //if UNDERWEIGHT < answerbmi < NORMAL
-            //Output "Normal" and answerbmi
-         //if NORMAL < answerbmi < OVERWEIGHT
-            //find suggested weight (weight - suggestedweightMax) and truncate to 10ths place
-            //Output "Overweight" , answerbmi and suggestedweight
-         //if answerbmi > OBESE
-            //find suggested weight (weight - suggestedweightMax) and truncate to 10ths place
-            ////Output "Obese" , answerbmi and suggestedweight
-   //end while loop
+   //prompt for and assign input to height(int) and weight input(double)
+   //check if zero
+      //True: return out of program
+   //check for the correctness of the input
+      //if not SHORTEST_PERSON<height or not height<TALLEST_PERSON
+         //break out of closest loop
+      //if not LIGHTEST_PERSON<weight or not weight<HEAVIEST_PERSON
+         //break out of closest loop
+   //run the math to compute the BMI and get into range with the 1lb
+      //answerbmi = weight / (height * height) * BMI_CONSTANT + 1
+   //run the math to compute the suggested weight and get into range with the 1lb
+      //suggestedweightMin = height*height*UNDERWEIGHT/BMI_CONSTANT + 1
+      //truncate the answerbmi to make user friendly
+   //check the BMI with the Bounds to determine the status of the BMI
+      //if answerbmi < UNDERWEIGHT
+         //find suggested weight (suggestedweightMin - weight) and truncate to 10ths place
+         //Output "Underweight" and answerbmi and suggestedweight
+      //if UNDERWEIGHT < answerbmi < NORMAL
+         //Output "Normal" and answerbmi
+      //if NORMAL < answerbmi < OVERWEIGHT
+         //find suggested weight (weight - suggestedweightMax) and truncate to 10ths place
+         //Output "Overweight" , answerbmi and suggestedweight
+      //if answerbmi > OBESE
+         //find suggested weight (weight - suggestedweightMax) and truncate to 10ths place
+         //Output "Obese" , answerbmi and suggestedweight
 //end while loop
