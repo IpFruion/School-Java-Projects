@@ -9,11 +9,9 @@ public class Project2BMI
 {
      //Start of Design:
      //Website of BMI Info: http://www.cdc.gov/healthyweight/assessing/bmi/adult_BMI/index.html
-     //define data
-       
-     
      //start at main
      public static void main(){
+         //define data
          //data: height(inches), weight(lbs), answerbmi, suggestedweightMin, scanin, suggestedweightMax, suggestedweight
          double weight, answerbmi, suggestedweightMin, suggestedweightMax, suggestedweight, answerbmifloat;
          Scanner scanin = new Scanner(System.in);
