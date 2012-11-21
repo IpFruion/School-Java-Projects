@@ -25,12 +25,13 @@ public class Project2BMI
         final double HEAVIEST_PERSON = 1400.;
         final double LIGHTEST_PERSON = 50.;
         final double TALLEST_PERSON = 100.;
-        final double SHORTEST_PERSON = 1.;
+        final double SHORTEST_PERSON = 30.;
+        final int ROUNDING_CONSTANT = 1; // used to get suggested weight
         //start while loop << to break out of this when input = zero
-        System.out.println("A program by Derrick Lockwood production");
+        System.out.println("**BMI Calculator v 1.0 by Derrick Lockwood**\n");
         while (true) {
             //prompt for and assign input to height(int) and weight input(double)
-            System.out.println("Please enter your height(in)(ex. 5.9ft -> 70.8in) or (zero to exit): ");
+            System.out.println("Please enter your height(in)(ex. 5ft 10in -> 70in) or (zero to exit): ");
             height = scanin.nextDouble();
             //check if zero
             if (height == 0) {
@@ -38,16 +39,18 @@ public class Project2BMI
                 //return out of program
                 return;
             }
-            System.out.println("Please enter your weight(lbs)(ex. 120lbs): ");
-            weight = scanin.nextDouble();
-            //check for the correctness of the input
-                //if not SHORTEST_PERSON<height or not height<TALLEST_PERSON
+            //check for correctness of height input
+            //if not SHORTEST_PERSON<height or not height<TALLEST_PERSON
             if (!(SHORTEST_PERSON<height) || !(height<TALLEST_PERSON))
             {
                 System.out.println("Not within height range");
                 //continue out of closest loop
                 continue;
             }
+            //prompt for and assign input to weight input(double)
+            System.out.println("Please enter your weight(lbs)(ex. 120lbs): ");
+            weight = scanin.nextDouble();
+            //check for the correctness of the weight input
             //if not LIGHTEST_PERSON<weight or not weight<HEAVIEST_PERSON
             if (!(LIGHTEST_PERSON<weight) || !(weight<HEAVIEST_PERSON))
             {
@@ -60,9 +63,9 @@ public class Project2BMI
             answerbmi = weight / (height * height) * BMI_CONSTANT;
             //run the math to compute the suggested weight
             //suggestedweightMin = height*height*UNDERWEIGHT/BMI_CONSTANT
-            suggestedweightMin = height*height*UNDERWEIGHT/BMI_CONSTANT + 1;
+            suggestedweightMin = height*height*UNDERWEIGHT/BMI_CONSTANT + ROUNDING_CONSTANT;
             //suggestedweightMax = height*height*NORMAL/BMI_CONSTANT
-            suggestedweightMax = height*height*NORMAL/BMI_CONSTANT + 1;
+            suggestedweightMax = height*height*NORMAL/BMI_CONSTANT + ROUNDING_CONSTANT;
             //truncate to make user friendly
             answerbmifloat = (double)((int)(answerbmi * 10))/10;
             //check the BMI with the Bounds to determine the status of the BMI
@@ -86,7 +89,7 @@ public class Project2BMI
                 suggestedweight = weight - suggestedweightMax;
                 suggestedweight = (double)((int)(suggestedweight * 10))/10;
                 //Output "Overweight" and weight - suggestedweightMax
-                System.out.println("\nOverweight: \nYour BMI is: "+answerbmifloat+"\n You need to lose: "+suggestedweight);
+                System.out.println("\nOverweight: \nYour BMI is: "+answerbmifloat+"\n You need to lose: "+suggestedweight+"lbs\n");
             }
             //if answerbmi > OBESE
             if (answerbmi > OBESE)
@@ -94,7 +97,7 @@ public class Project2BMI
                 suggestedweight = weight - suggestedweightMax;
                 suggestedweight = (double)((int)(suggestedweight * 10))/10;
                 //Output "Obese" and weight - suggestedweightMax
-                System.out.println("\nObese: \nYour BMI is: "+answerbmifloat+"\n You need to lose: "+suggestedweight);
+                System.out.println("\nObese: \nYour BMI is: "+answerbmifloat+"\n You need to lose: "+suggestedweight+"lbs\n");
             }
             //end while loop
         }
