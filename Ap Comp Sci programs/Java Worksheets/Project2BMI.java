@@ -30,7 +30,7 @@ public class Project2BMI
         //start while loop << to break out of this when input = zero
         System.out.println("**BMI Calculator v 1.0 by Derrick Lockwood**\n");
         while (true) {
-            //prompt for and assign input to height(int) and weight input(double)
+            //prompt for and assign input to height(int)
             System.out.println("Please enter your height(in)(ex. 5ft 10in -> 70in) or (zero to exit): ");
             height = scanin.nextDouble();
             //check if zero

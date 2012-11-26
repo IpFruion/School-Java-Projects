@@ -5,12 +5,14 @@
    //data: height(inches), weight(lbs), answerbmi, suggestedweightMin, scanin, suggestedweightMax, suggestedweight
    //constant data: UNDERWEIGHT = 18.5, NORMAL = 24.9, OVERWEIGHT = 29.9, OBESE = 30.0, BMI_CONSTANT = 703, HEAVIEST_PERSON = 1400, TALLEST_PERSON = 100, LIGHTEST_PERSON = 50, SHORTEST_PERSON = 1
 //start while loop << to break out of this when input = zero
-   //prompt for and assign input to height(int) and weight input(double)
+   //prompt for and assign input to height(int)
    //check if zero
       //True: return out of program
-   //check for the correctness of the input
+   //check for the correctness of the height input
       //if not SHORTEST_PERSON<height or not height<TALLEST_PERSON
          //continue out of closest loop
+   //prompt for and assign input to height(int)
+   //check for the correctness of the weight input
       //if not LIGHTEST_PERSON<weight or not weight<HEAVIEST_PERSON
          //continue out of closest loop
    //run the math to compute the BMI and get into range with the 1lb
