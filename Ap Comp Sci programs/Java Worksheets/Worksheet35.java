@@ -13,41 +13,52 @@ public class Worksheet35
         Scanner s = new Scanner(System.in);
         int input1;
         int input2;
+        int start;
+        int end;
 
+
+        //start of problem 1
         System.out.print("Enter first digit to compare: \n");
         input1 = s.nextInt();
         System.out.print("Enter second digit to compare: \n");
         input2 = s.nextInt();
-
-        /*
-         * if (!(input1 % 2 == 0))
+        if (input1 < input2)
+        {
+            if (!(input1 % 2 == 0))
             {
                 input1+=1;
             }
-         */
-        //start of problem 1
-        if (!(input1 % 2 == 0))
-        {
-            for (int x = input1+1; x<=input2; x+=2)
-            {
-                System.out.print(x + " ");
-            }
-            for (int x = input2+1; x<=input1; x+=2)
-            {
-                System.out.print(x + " ");
-            }
+            start = input1;
+            end = input2;
         }
         else
         {
-            for (int x = input1; x<=input2; x+=2)
+            if (!(input2 % 2 == 0))
             {
-                System.out.print(x + " ");
+                input2+=1;
             }
-            for (int x = input2; x<=input1; x+=2)
-            {
-                System.out.print(x + " ");
-            }
+            start = input2;
+            end = input1;
+        }
+        for (int x = start; x<=end; x+=2)
+        {
+            System.out.print(x + " ");
         }
         //end of problem 1
+        System.out.println();
+        //start of problem 2
+        for (int x = 10; x>=0; x--)
+        {
+            for (int z = 10; z>x; z--)
+            {
+                    System.out.print(" ");
+            }
+            for (int y = x; y>0; y--)
+            {
+                System.out.print("X");
+            }
+            System.out.println();
+        }
+
     }
 }
