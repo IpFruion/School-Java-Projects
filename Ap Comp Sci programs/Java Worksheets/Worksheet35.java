@@ -7,7 +7,6 @@
 import java.util.Scanner;
 public class Worksheet35
 {
-
     public static void main()
     {
         Scanner s = new Scanner(System.in);
