@@ -9,20 +9,22 @@ public class Worksheet35E
 {
     public static void main()
     {
-        for (int x = 10; x>0; x--)
+        int letters = 9;
+        int spaces;
+        for (int rows = 9; rows>0; rows--)
         {
-            for (int z = x; z>0; z++)
+            for (spaces = rows - letters; spaces<=5; spaces++)
             {
                 System.out.print(" ");
             }
-            for (int y = x; y>0; y-=2)
+            for (; spaces>=5; spaces--)
             {
-                if (y % 2 == 0)
-                {
-                    System.out.print("X");
-                }
+                System.out.print(" ");
             }
-            System.out.println();
+            for (;letters > 0; letters-=2)
+            {
+                System.out.print("X");
+            }
         }
     }
 }
