@@ -12,19 +12,19 @@ public class Worksheet41
     boolean b1,b2,b3;
   
     //problem 1
-    public boolean mercury(int i, int j)
+    boolean mercury(int i, int j)
     //problem 2
-    public int venus(int k)
+    int venus(int k)
     //problem 3
-    public double earth(double d1, double d2)
+    double earth(double d1, double d2)
     //problem 4
-    public boolean mars(int j, double d1)
+    boolean mars(int j, double d1)
     //problem 5
-    public boolean jupiter()
+    boolean jupiter()
     //problem 6
-    public double saturn(int i,  int j, double d1)
+    double saturn(int i,  int j, double d1)
     //problem 7
-    public void uranus(double d1, double d2, double d3)
+    void uranus(double d1, double d2, double d3)
     //problem 8
-    public boolean neptune(double d1, double d2, boolean b1)
+    boolean neptune(double d1, double d2, boolean b1)
 }
