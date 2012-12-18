@@ -2,32 +2,39 @@
 /**
  * Write a description of class Worksheet45 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Derrick Lockwood
+ * @version 12-17-12
  */
+import java.util.Scanner;
 public class Worksheet45
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Worksheet45
-     */
-    public Worksheet45()
+    public static void main()
     {
-        // initialise instance variables
-        x = 0;
+        int r;
+        int runNum;
+        Scanner stdin = new Scanner(System.in);
+        while (true)
+        {
+            System.out.println("Input number of rolls");
+            runNum = stdin.nextInt();
+            if (runNum <= 0)
+            {
+                break;
+            }
+            for (int x = 0; x < runNum ; x++)
+            {
+                r = rollDie();
+                r++;
+                System.out.print(r + " ");
+            }
+            System.out.println();
+        }
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public static int rollDie()
     {
-        // put your code here
-        return x + y;
+        int random;
+        random = (int)(Math.random()*6);
+        return random;
     }
 }
