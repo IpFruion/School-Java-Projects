@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ main()
+comment1.params=you\ date
+comment1.target=int\ dateFashion(int,\ int)
+comment2.params=scores
+comment2.target=boolean\ scoresIncreasing(int[])
+comment3.params=x
+comment3.target=void\ o(java.lang.String)
+comment3.text=public\ static\ int\ scoresAverage(int[]\ scores)\ \n\ \ \ \ {\n\ \ \ \ int\ firstAvg\ \=\ average(scores,0,(scores.length-1)/2);\n\ \ \ \ int\ secondAvg\ \=\ average(scores,scores.length/2,\ scores.length-1);\n\n\ \ \ \ if\ (firstAvg\ <\=\ secondAvg)\n\ \ \ \ {\n\ \ \ \ return\ secondAvg;\n\ \ \ \ }\n\ \ \ \ return\ firstAvg;\n\ \ \ \ }\n\n\ \ \ \ public\ static\ int\ average(int[]\ nums,\ int\ start,\ int\ end)\n\ \ \ \ {\n\ \ \ \ int\ answer\ \=\ 0;\n\ \ \ \ int\ index\ \=\ 0;\n\ \ \ \ double\ answerDub;\n\ \ \ \ for\ (int\ i\ \=\ start;\ i<\=end;\ i++)\n\ \ \ \ {\n\ \ \ \ answer\ \=\ answer\ +nums[i];\n\n\ \ \ \ index++;\n\ \ \ \ }\n\n\ \ \ \ answerDub\ \=\ answer/index;\n\ \ \ \ return\ (int)Math.round(answerDub);\n\ \ \ \ }\n\n\ \ \ \ //recursion\n\ \ \ \ public\ static\ boolean\ array220(int[]\ nums,\ int\ index)\n\ \ \ \ {\n\ \ \ \ boolean\ isCorrect\ \=\ false;\n\ \ \ \ int\ startAt\ \=\ nums[index];\n\n\ \ \ \ if\ ((index\ <\ nums.length-1)\ &&\ (startAt*10\ \=\=\ nums[index+1]))\n\ \ \ \ {\n\ \ \ \ isCorrect\ \=\ true;\n\ \ \ \ return\ isCorrect;\n\ \ \ \ }\n\ \ \ \ if(\ index\ <\ nums.length-1)\n\ \ \ \ {\n\ \ \ \ isCorrect\ \=\ array220(nums,\ index+1);\n\ \ \ \ return\ isCorrect;\n\ \ \ \ }\n\ \ \ \ return\ isCorrect;\n\ \ \ \ }\n
+numComments=4
